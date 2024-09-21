@@ -33,64 +33,70 @@ A Netflix-inspired full-stack **Video Streaming App** built with **Next.js**, **
 - MongoDB (v5.0+)
 - YouTube Developer API Key
 
-### Clone the repository
 
-```bash
-git clone https://github.com/your-username/video-streaming-app.git
-cd video-streaming-app
-```
 
-### Backend Setup
+### 🚀 Features
 
-1. **Install Backend Dependencies**:
-    ```bash
-    cd backend
-    npm install
-    ```
+1. **🎥 Netflix-Inspired UI**:  
+   The user interface is designed to resemble Netflix, offering an immersive experience with a modern, responsive layout. Users can easily browse through available videos, view detailed information about each video, and stream them directly within the app.
 
-2. **Set up MongoDB**:
-   Ensure MongoDB is running locally or on a server. Create a `.env` file in the `backend` directory and add the following:
+2. **🔐 Secure Authentication**:  
+   The app uses session-based authentication to ensure secure access for registered users.  
+   - **Express-Sessions**: Users remain logged in during their session without requiring constant re-authentication. Session data is securely stored in MongoDB.
+   - **Password Hashing with Bcrypt**: User passwords are never stored in plain text. Using `bcrypt`, passwords are hashed and salted to enhance security, ensuring that even if the database is compromised, user credentials remain safe.
 
-    ```
-    MONGODB_URI=your_mongodb_uri
-    SESSION_SECRET=your_session_secret
-    YOUTUBE_API_KEY=your_youtube_api_key
-    ```
+3. **📡 Video Fetching with YouTube Developer API**:  
+   The app integrates with the **YouTube Developer API** to fetch video data in real-time.  
+   - Users can view trending videos and get detailed metadata such as video duration, likes, views, and comments.
+   - The API enables smooth loading and streaming of videos directly within the platform.
 
-3. **Start the Backend**:
-    ```bash
-    npm run dev
-    ```
+4. **🔍 Advanced Video Search**:  
+   Users can search for videos based on title, description, or genre. The search functionality is optimized to return relevant results quickly by leveraging YouTube API's search capabilities.
 
-### Frontend Setup
+5. **💬 User-Friendly Dashboard**:  
+   The app includes a user dashboard where users can:
+   - View their watch history.
+   - Mark videos as favorites for quick access later.
+   - Keep track of previously watched videos with timestamps to continue watching from where they left off.
 
-1. **Install Frontend Dependencies**:
-    ```bash
-    cd frontend
-    npm install
-    ```
+6. **📂 Playlist Management**:  
+   Users can create custom playlists of their favorite videos:
+   - **Add to Playlist**: Add any video to one or more custom playlists.
+   - **Organize Playlists**: Rename, edit, or delete playlists as needed to keep their video library organized.
 
-2. **Start the Frontend**:
-    ```bash
-    npm run dev
-    ```
+7. **📊 Analytics & Watch Stats**:  
+   Each user can view analytics of their streaming habits, including:
+   - Total videos watched.
+   - Total time spent streaming.
+   - Video watch time for individual videos.
+   This feature gives users insight into their viewing habits and helps them track progress on their playlists.
 
-The app will be running on `http://localhost:3000`.
+8. **🌐 Real-Time Streaming**:  
+   The app leverages efficient caching and buffering strategies to ensure smooth, real-time video streaming even on slower internet connections. Videos are progressively loaded, ensuring minimal buffering.
 
-## 📚 Usage
+9. **🔒 Role-Based Authorization (Future Scope)**:  
+   The project is designed to easily support role-based authorization, where different users (admins, premium users, regular users) can have varying access levels and features. Premium features like HD/4K streaming can be added for premium users in future updates.
 
-1. Sign up or log in with your account.
-2. Browse through the video library powered by YouTube API.
-3. Enjoy seamless video streaming with a Netflix-like experience.
+10. **🌟 Responsive & Cross-Platform Compatibility**:  
+    The application is designed with responsiveness in mind, ensuring it works seamlessly across devices:
+    - Mobile, tablet, and desktop compatibility.
+    - A consistent user experience no matter the screen size.
+
+11. **🛠️ Scalable Backend**:  
+    Built with **Express.js** and **MongoDB**, the app’s backend is optimized for high scalability:
+    - The non-blocking nature of Node.js ensures that the server can handle multiple simultaneous requests efficiently.
+    - MongoDB is used for storing both user session data and video metadata, ensuring fast and scalable database operations.
+
+12. **💬 User Feedback and Ratings (Planned Feature)**:  
+    A planned feature is allowing users to leave feedback and rate videos, helping to improve the app’s content recommendations.
+
 
 
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to fork this repository, submit issues, or open pull requests.
 
-## 📝 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ## 📧 Contact
 
